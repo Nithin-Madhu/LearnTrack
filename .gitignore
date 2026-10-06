@@ -3,8 +3,11 @@ out/
 !**/src/main/**/out/
 !**/src/test/**/out/
 
-git rm -r --cached .idea LearnTrack.iml
-(echo .idea/& echo *.iml) >> .gitignore
+
+
+.idea/
+*.iml
+
 
 ### Eclipse ###
 .apt_generated
