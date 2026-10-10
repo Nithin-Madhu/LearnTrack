@@ -1,45 +1,46 @@
 package com.airtribe.learntrack.entity;
 
+import com.airtribe.learntrack.util.IdGenerator;
+
 import java.util.Date;
 import java.util.Objects;
 
 public class Enrollment {
 
-    private Long id;
-    private Long studentId;
-    private Long courseId;
+    private static final IdGenerator ID_GENERATOR = new IdGenerator("ENR");
+
+
+    private final String id;
+    private String studentId;
+    private String courseId;
     private Date enrollmentDate;
     private Status status;
 
-    public Enrollment(Long id, Long studentId, Long courseId, Date enrollmentDate, Status status) {
-        this.id = id;
+    public Enrollment( String studentId, String courseId, Date enrollmentDate, Status status) {
+        this.id = ID_GENERATOR.nextId();
         this.studentId = studentId;
         this.courseId = courseId;
         this.enrollmentDate = enrollmentDate;
         this.status = status;
     }
 
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Long getStudentId() {
+    public String getStudentId() {
         return studentId;
     }
 
-    public void setStudentId(Long studentId) {
+    public void setStudentId(String studentId) {
         this.studentId = studentId;
     }
 
-    public Long getCourseId() {
+    public String getCourseId() {
         return courseId;
     }
 
-    public void setCourseId(Long courseId) {
+    public void setCourseId(String courseId) {
         this.courseId = courseId;
     }
 
@@ -74,7 +75,7 @@ public class Enrollment {
     @Override
     public String toString() {
         return "Enrollment{" +
-                "id=" + id +
+                "id='" + id + '\'' +
                 ", studentId=" + studentId +
                 ", courseId=" + courseId +
                 ", enrollmentDate=" + enrollmentDate +
