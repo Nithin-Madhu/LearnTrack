@@ -71,7 +71,7 @@ public class EnrollmentService {
     public void changeStatus(Status status) {
 
         try{
-            System.out.print("Enter enrollment ID");
+            System.out.print("Enter enrollment ID : ");
             String enrollmentId = scanner.nextLine().trim();
 
             for(Enrollment enrollment:enrollmentList){
